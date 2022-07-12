@@ -48,6 +48,8 @@ let acceptData = () => {
 
   localStorage.setItem("data", JSON.stringify(data));
   console.log(data);
+
+  createTask();
 };
 
 // should reset the form after submitting
@@ -57,3 +59,30 @@ let resetForm = () => {
   dateInput.value = "";
   textarea.value = "";
 };
+
+// CREATE
+let createTask = () => {
+  tasks.innerHTML = "";
+  data.map((x, y) => {
+    return (tasks.innerHTML += `
+    <div id=${y}>
+      <span class="fw-bold">${x.text}</span>
+      <span class="small text-secondary">${x.date}</span>
+      <p>${x.description}</p>
+
+      <span class="btnOptions">
+        <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+        <i onClick="deleteTask(this);createTask()" class="fas fa-trash-alt"></i>
+      </span>
+    </div>
+    `);
+  });
+  resetForm();
+};
+
+// allow data to persist on page load
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || [];
+  console.log(data);
+  createTask();
+})();
