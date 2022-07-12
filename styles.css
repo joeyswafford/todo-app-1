@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #304C89;
+  overflow: hidden;
+
+}
+
+.app {
+  /* display: flex;  */ /* no display:flex leaves divs stacked */
+  font-size: 10px;
+  height: 600px;
+  width: 300px;
+  background-color: #9EB7E5;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+#addNewTask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  background-color: #E8E5DA;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.fa-plus {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #648DE5;
+}
+
+#msg {
+  color: red;
+}
+

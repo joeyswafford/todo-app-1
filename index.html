@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles.css" />
     <!-- font awesome link -->
     <link
       rel="stylesheet"
@@ -20,10 +19,80 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Todo App - CRUD Practice</title>
   </head>
 
   <body>
-    <div class="app"></div>
+    <div class="app">
+      <h4 class="text-center my-3">Todo's for Today</h4>
+
+      <div
+        id="addNewTask"
+        class="mx-2"
+        data-bs-toggle="modal"
+        data-bs-target="#form"
+      >
+        <span>Add New Task</span>
+        <i class="fas fa-plus"></i>
+      </div>
+
+      <h5 class="text-center my-3">Current Tasks</h5>
+
+      <!-- empty div will eventually house the appended html from javascript. -->
+      <div id="tasks"></div>
+    </div>
+
+    <!-- Modal -->
+    <form
+      class="modal fade"
+      id="form"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Task Title</p>
+            <input type="text" class="form-control" name="" id="textInput" />
+            <div id="msg"></div>
+            <br />
+            <p>Due Date</p>
+            <input type="date" class="form-control" name="" id="dateInput" />
+            <br />
+            <p>Description</p>
+            <textarea
+              name=""
+              class="form-control"
+              id="textarea"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" id="add" class="btn btn-primary">Add</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script src="main.js"></script>
   </body>
 </html>
