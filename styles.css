@@ -62,6 +62,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+  padding-bottom: 10px;
 }
 
 #tasks div {
