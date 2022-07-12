@@ -81,11 +81,24 @@ let createTask = () => {
 };
 
 // allow data to persist on page load
-(() => {
-  data = JSON.parse(localStorage.getItem("data")) || [];
+
+const savedData = localStorage.getItem("data");
+// ^^^ if "data" does not exist in local storage, then this will be undefined
+const maybeData = JSON.parse(savedData);
+// ^^^ this could be the data object or undefined
+if (maybeData !== undefined) {
+  data = maybeData;
   console.log(data);
   createTask();
-})();
+} else {
+  data = [];
+  // ^^^ set data to an empty array since there is no saved data
+}
+// (() => {
+//   data = JSON.parse(localStorage.getItem("data")) || [];
+//   console.log(data);
+//   createTask();
+// })();
 
 // READ & UPDATE
 let editTask = (e) => {
