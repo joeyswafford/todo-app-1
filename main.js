@@ -66,7 +66,7 @@ let createTask = () => {
   data.map((x, y) => {
     return (tasks.innerHTML += `
     <div id=${y}>
-      <span class="fw-bold">${x.text}</span>
+      <h5 class="fw-bold">${x.text}</h5>
       <span class="small text-secondary">${x.date}</span>
       <p>${x.description}</p>
 
