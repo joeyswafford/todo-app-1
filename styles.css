@@ -9,6 +9,18 @@ body {
 
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #E8E5DA;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #648DE5;
+}
+
 .app {
   /* display: flex;  */ /* no display:flex leaves divs stacked */
   font-size: 10px;
