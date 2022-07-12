@@ -81,11 +81,24 @@ let createTask = () => {
 };
 
 // allow data to persist on page load
-(() => {
-  data = JSON.parse(localStorage.getItem("data")) || [];
+
+const savedData = localStorage.getItem("data");
+
+const maybeData = JSON.parse(savedData);
+
+if (maybeData !== undefined) {
+  data = maybeData;
   console.log(data);
   createTask();
-})();
+} else {
+  data = [];
+}
+
+// (() => {
+//   data = JSON.parse(localStorage.getItem("data")) || [];
+//   console.log(data);
+//   createTask();
+// })();
 
 // READ & UPDATE
 let editTask = (e) => {
