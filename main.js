@@ -98,6 +98,7 @@ let editTask = (e) => {
   deleteTask(e); // using the delete function to remove selected data from local storage, HTML element, and the data array
 };
 
+// DELETE
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove(); // deletes html from screen
 
