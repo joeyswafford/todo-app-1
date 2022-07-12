@@ -19,7 +19,7 @@ let formValidation = () => {
     msg.innerHTML = "";
 
     acceptData();
-    // after accepting data, need to clear the form
+    // after accepting data, need to dismiss the form
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
 
