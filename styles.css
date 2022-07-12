@@ -62,6 +62,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+  padding-bottom: 10px;
 }
 
 #tasks div {
@@ -92,6 +93,10 @@ body {
 
 #tasks div .btnOptions i:hover {
   transform: scale(1.5);
+}
+
+.date {
+  margin-top: -10px;
 }
 
 

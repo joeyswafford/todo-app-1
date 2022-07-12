@@ -36,7 +36,6 @@ form.addEventListener("submit", (e) => {
 });
 
 // collect user data and save to local storage
-
 let data = [];
 
 let acceptData = () => {
@@ -67,7 +66,7 @@ let createTask = () => {
     return (tasks.innerHTML += `
     <div id=${y}>
       <h5 class="fw-bold">${x.text}</h5>
-      <span class="small text-secondary">${x.date}</span>
+      <span class="small text-secondary date">${x.date}</span>
       <p>${x.description}</p>
 
       <span class="btnOptions">
@@ -81,7 +80,7 @@ let createTask = () => {
 };
 
 // allow data to persist on page load
-
+ main
 const savedData = localStorage.getItem("data");
 // ^^^ if "data" does not exist in local storage, then this will be undefined
 const maybeData = JSON.parse(savedData);
@@ -94,6 +93,7 @@ if (maybeData !== undefined) {
   data = [];
   // ^^^ set data to an empty array since there is no saved data
 }
+ main
 // (() => {
 //   data = JSON.parse(localStorage.getItem("data")) || [];
 //   console.log(data);
