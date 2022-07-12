@@ -83,15 +83,16 @@ let createTask = () => {
 // allow data to persist on page load
 
 const savedData = localStorage.getItem("data");
-
+// ^^^ if "data" does not exist in local storage, then this will be undefined
 const maybeData = JSON.parse(savedData);
-
+// ^^^ this could be the data object or undefined
 if (maybeData !== undefined) {
   data = maybeData;
   console.log(data);
   createTask();
 } else {
   data = [];
+  // ^^^ set data to an empty array since there is no saved data
 }
 
 // (() => {
